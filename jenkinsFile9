@@ -1,5 +1,8 @@
 pipeline {
     agent {label "jdk17"}
+    parameters {
+    string(name: VERSION, defaultValue :'1.0.0', description : 'Version du projet')
+    }
 
     stages {
         stage('clonecodebase') {
@@ -37,9 +40,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'project packaging'
+                echo 'project packaging: ${params.VERSION}'
                   withMaven(maven : 'localMaven'){
-                    sh "mvn -B -DskipTests clean package"
+                    sh "mvn -B -DskipTests clean install -Dproject.version=${params.VERSION}"
                 }
             }
         }
