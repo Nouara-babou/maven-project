@@ -2,6 +2,8 @@ pipeline {
     agent {label "jdk17"}
     parameters {
     string(name: VERSION, defaultValue :'1.0.0', description : 'Version du projet')
+    choice(name: 'ENVIRONMENT', choices: ['dev', 'staging', 'production'], description: 'Choisissez l\'environnement')
+    
     }
 
     stages {
@@ -46,6 +48,14 @@ pipeline {
                 }
             }
         }
-        
+
+        stage('Deploy') {
+            steps {
+                echo 'Artefact deploy dans evirn: ${params.ENVIRONMENT}'
+                  withMaven(maven : 'localMaven'){
+                    // sh "./deploy.sh --env = {params.ENVIRONMENT} --version = ${params.VERSION}"
+                }
+            }
+        }
     }    
 }
