@@ -7,9 +7,6 @@ import java.lang.Math;
 
 public class Greeter {
 
- public int v1 = 0;
-  public String nom = "Alice";
- 
   /**
   * this in contructor
   */
@@ -17,18 +14,9 @@ public class Greeter {
   public Greeter() {
    // contructeur par défaut
   }
-
    public void doSomeThing() {
      System.out.println("hello je suis moi");
    // do no thing yet !
-  }
-   public void doSomeThing2() {
-    System.out.println("hello je suis moi");
-   // do no thing yet !
-  }
-    public void doSomeThing3() {
-   // do no thing yet !
-      System.out.println("hello je suis moi");
   }
  /**
  * @param someone name of a person
