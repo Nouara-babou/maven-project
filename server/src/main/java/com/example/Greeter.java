@@ -8,7 +8,7 @@ import java.lang.Math;
 public class Greeter {
 
  public int v1 = 0;
-  publice String nom = "Alice";
+  public String nom = "Alice";
  
   /**
   * this in contructor
