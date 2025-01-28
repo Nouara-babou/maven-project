@@ -71,21 +71,12 @@
         <configuration>
           <reportPlugins>
             <plugin>
-              <artifactId>maven-checkstyle-plugin</artifactId>
-            </plugin>
-
-            <plugin>
               <artifactId>maven-jxr-plugin</artifactId>
             </plugin>
 
             <plugin>
               <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
-
-            <plugin>
-              <artifactId>maven-pmd-plugin</artifactId>
-            </plugin>
-
             <plugin>
               <artifactId>maven-surefire-report-plugin</artifactId>
             </plugin>
@@ -107,8 +98,9 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>        
           <artifactId>maven-checkstyle-plugin</artifactId>
-          <version>2.8</version>
+          <version>3.1.2</version>
         </plugin>
 
         <plugin>
@@ -127,8 +119,9 @@
         </plugin>
 
         <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pmd-plugin</artifactId>
-          <version>2.6</version>
+          <version>3.15.0</version>
         </plugin>
 
         <plugin>
@@ -162,9 +155,9 @@
         </plugin>
 
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
+          <groupId>com.github.spotbugs</groupId>
           <artifactId>findbugs-maven-plugin</artifactId>
-          <version>2.3.3</version>
+          <version>4.7.3.0.</version>
         </plugin>
 
         <plugin>
